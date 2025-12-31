@@ -1,4 +1,5 @@
-import { writingItems } from '@/data/dummy';
+import Link from "next/link";
+import { writingItems } from "@/data/writing";
 
 export default function WritingPage() {
   return (
@@ -9,14 +10,22 @@ export default function WritingPage() {
 
       <section className="space-y-6">
         {writingItems.map((item) => (
-          <article key={item.id} className="space-y-1 pb-6 border-b border-border last:border-0">
+          <article
+            key={item.id}
+            className="space-y-1 pb-6 border-b border-border last:border-0"
+          >
             <div className="flex items-baseline justify-between gap-4">
               <h2 className="text-base">
-                <a href={`/writing/${item.slug}`} className="no-underline hover:opacity-70 transition-opacity">
+                <Link
+                  href={`/writing/${item.slug}`}
+                  className="no-underline hover:opacity-70 transition-opacity"
+                >
                   {item.title}
-                </a>
+                </Link>
               </h2>
-              <time className="opacity-60 text-sm whitespace-nowrap">{item.date}</time>
+              <time className="opacity-60 text-sm whitespace-nowrap">
+                {item.date}
+              </time>
             </div>
             <p className="opacity-60 text-sm pl-6">{item.description}</p>
           </article>
@@ -25,4 +34,3 @@ export default function WritingPage() {
     </main>
   );
 }
-

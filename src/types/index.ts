@@ -4,7 +4,6 @@ export interface WritingItem {
   date: string;
   description: string;
   slug: string;
-  tags?: string[];
 }
 
 export interface BuildingItem {
@@ -14,8 +13,7 @@ export interface BuildingItem {
   description: string;
   link?: string;
   github?: string;
-  status: 'active' | 'archived' | 'exploring';
-  tags?: string[];
+  status: "active" | "archived" | "exploring";
 }
 
 export interface ThinkingItem {
@@ -24,6 +22,5 @@ export interface ThinkingItem {
   date: string;
   description: string;
   link: string;
-  type: 'article' | 'tool' | 'resource' | 'inspiration';
+  type: "article" | "tool" | "resource" | "inspiration";
 }
-
