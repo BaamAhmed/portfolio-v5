@@ -22,5 +22,5 @@ export interface ThinkingItem {
   date: string;
   description: string;
   link: string;
-  type: "article" | "tool" | "resource" | "inspiration";
+  type: "article" | "tool" | "tweet" | "movie";
 }

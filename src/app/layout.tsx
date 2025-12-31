@@ -9,8 +9,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Portfolio",
-  description: "A minimal portfolio and digital garden",
+  title: "Bassam Ahmed | Portfolio",
+  description:
+    "Personal website of Bassam Ahmed - building, writing, and curating ideas",
 };
 
 export default function RootLayout({

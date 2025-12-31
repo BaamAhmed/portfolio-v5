@@ -1,4 +1,4 @@
-import { buildingItems } from "@/data/dummy";
+import { buildingItems } from "@/data/building";
 import { ExternalLink } from "lucide-react";
 
 const statusEmoji: Record<string, string> = {
@@ -18,48 +18,50 @@ export default function BuildingPage() {
       </section>
 
       <section className="space-y-6">
-        {buildingItems.map((item) => (
-          <article
-            key={item.id}
-            className="space-y-1 pb-6 border-b border-border last:border-0"
-          >
-            <div className="flex items-baseline justify-between gap-4">
-              <h2 className="text-base flex items-center gap-2">
-                <span className="opacity-60">{statusEmoji[item.status]}</span>
-                {item.link ? (
+        {buildingItems
+          .sort((a, b) => Number(b.id) - Number(a.id))
+          .map((item) => (
+            <article
+              key={item.id}
+              className="space-y-1 pb-6 border-b border-border last:border-0"
+            >
+              <div className="flex items-baseline justify-between gap-4">
+                <h2 className="text-base flex items-center gap-2">
+                  <span className="opacity-60">{statusEmoji[item.status]}</span>
+                  {item.link ? (
+                    <a
+                      href={item.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-1.5 no-underline hover:opacity-70 transition-opacity"
+                    >
+                      {item.title}
+                      <ExternalLink className="w-3 h-3" />
+                    </a>
+                  ) : (
+                    <span>{item.title}</span>
+                  )}
+                </h2>
+                <time className="opacity-60 text-sm whitespace-nowrap">
+                  {item.date}
+                </time>
+              </div>
+              <p className="opacity-60 text-sm pl-6">{item.description}</p>
+              {item.github && (
+                <div className="text-xs opacity-60 pl-6">
                   <a
-                    href={item.link}
+                    href={item.github}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-1.5 no-underline hover:opacity-70 transition-opacity"
+                    className="flex items-center gap-1 hover:opacity-100 transition-opacity"
                   >
-                    {item.title}
+                    github
                     <ExternalLink className="w-3 h-3" />
                   </a>
-                ) : (
-                  <span>{item.title}</span>
-                )}
-              </h2>
-              <time className="opacity-60 text-sm whitespace-nowrap">
-                {item.date}
-              </time>
-            </div>
-            <p className="opacity-60 text-sm pl-6">{item.description}</p>
-            {item.github && (
-              <div className="text-xs opacity-60 pl-6">
-                <a
-                  href={item.github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-1 hover:opacity-100 transition-opacity"
-                >
-                  github
-                  <ExternalLink className="w-3 h-3" />
-                </a>
-              </div>
-            )}
-          </article>
-        ))}
+                </div>
+              )}
+            </article>
+          ))}
       </section>
     </main>
   );
