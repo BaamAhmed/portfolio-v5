@@ -1,65 +1,123 @@
-import Image from "next/image";
+import Link from "next/link";
+import {
+  Hammer,
+  PenLine,
+  FolderHeart,
+  Github,
+  Twitter,
+  Mail,
+} from "lucide-react";
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+    <main className="space-y-12">
+      <h1 className="text-5xl my-20">
+        Bassam_Ahmed<span className="opacity-10">.md</span>
+      </h1>
+      <section>
+        <h2 className="text-lg uppercase tracking-wider ">## What's new</h2>
+        <div className="space-y-3 opacity-60">
+          <p>
+            - I'm moving to SF for Jan-Apr 2026 for an internship, reach out if
+            you're in the area and wanna hang
           </p>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
+      </section>
+      <section className="space-y-2">
+        <h2 className="text-lg uppercase tracking-wider ">## Who I am</h2>
+        <div className="space-y-1 opacity-60">
+          <p>
+            - at the core, a builder/creator, recently started writing and
+            curating
+          </p>
+          <p>
+            - CS @ UWaterloo | SWE @ Automax (YC F25) | prev. @ Stably (YC W22),
+            PlayStation
+          </p>
+          <p>
+            - I often jump from one obsession to another, and plan on doing so
+            until I've found one worth sticking to
+          </p>
+          <p>
+            - currently obsessing over:{" "}
+            <span className="font-bold">
+              Pixar's History / Computer Graphics in Animation
+            </span>
+          </p>
+        </div>
+      </section>
+
+      <section className="space-y-2">
+        <h2 className="text-lg uppercase tracking-wider ">## What I do</h2>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <Link
+            href="/building"
+            className="block group hover:bg-foreground/5 p-3 border border-border hover:border-foreground/40 transition-all"
+          >
+            <div className="flex items-center gap-2 mb-1">
+              <Hammer className="w-[1em] h-[1em]" />
+              <h3 className="font-bold group-hover:text-foreground transition-colors">
+                Build
+              </h3>
+            </div>
+            <p className="opacity-60 text-sm">
+              Results of explorations and tinkerings
+            </p>
+          </Link>
+          <Link
+            href="/writing"
+            className="block group hover:bg-foreground/5 p-3 border border-border hover:border-foreground/40 transition-all"
+          >
+            <div className="flex items-center gap-2 mb-1">
+              <PenLine className="w-[1em] h-[1em]" />
+              <h3 className="font-bold group-hover:text-foreground transition-colors">
+                Write
+              </h3>
+            </div>
+            <p className="opacity-60 text-sm">
+              About whatever I'm obsessed with at the moment
+            </p>
+          </Link>
+          <Link
+            href="/thinking"
+            className="block group hover:bg-foreground/5 p-3 border border-border hover:border-foreground/40 transition-all"
+          >
+            <div className="flex items-center gap-2 mb-1">
+              <FolderHeart className="w-[1em] h-[1em]" />
+              <h3 className="font-bold group-hover:text-foreground transition-colors">
+                Curate
+              </h3>
+            </div>
+            <p className="opacity-60 text-sm">
+              Just some cool stuff from the intrawebs
+            </p>
+          </Link>
+        </div>
+      </section>
+
+      <section className="space-y-4">
+        <h2 className="text-lg uppercase tracking-wider ">## CONNECT</h2>
+        <div className="flex gap-4 text-sm">
           <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
+            href="https://github.com/baamahmed"
             target="_blank"
             rel="noopener noreferrer"
+            className="flex items-center gap-1.5 hover:text-foreground transition-colors"
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
+            <Github className="w-[1em] h-[1em]" />
+            github
           </a>
           <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
+            href="https://twitter.com/thebaamahmed"
             target="_blank"
             rel="noopener noreferrer"
+            className="flex items-center gap-1.5 hover:text-foreground transition-colors"
           >
-            Documentation
+            <Twitter className="w-[1em] h-[1em]" />
+            twitter
           </a>
         </div>
-      </main>
-    </div>
+      </section>
+    </main>
   );
 }
