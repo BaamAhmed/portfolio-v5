@@ -10,4 +10,14 @@ export const buildingItems: BuildingItem[] = [
     link: "https://tryscrawl.com",
     status: "active",
   },
+  {
+    id: "2",
+    title: "Typewriter - Minimal, distraction-free typing",
+    date: "2026-01-01",
+    description:
+      "an extremely minimal and tasteful typewriting experience, with satisfying sounds and visual effects, and most importantly, no distractions or gimmicks",
+    link: "https://typewriter.baamahmed.me",
+    github: "https://github.com/BaamAhmed/typewriter",
+    status: "active",
+  },
 ];
